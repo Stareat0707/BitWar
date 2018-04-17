@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float speed;
-
     void Start()
     {
         StartCoroutine(MoveCamera());
@@ -15,8 +13,9 @@ public class CameraMovement : MonoBehaviour
     {
         while (true)
         {
-            transform.position += new Vector3(speed, 0.0f, 0.0f);
+            // 매 초마다 카메라를 옆으로 옮깁니다.
             yield return new WaitForSeconds(1.0f);
+            transform.position += new Vector3(1, 0, 0);
         }
     }
 }
